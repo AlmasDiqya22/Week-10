@@ -3,13 +3,14 @@ Tugas Artificial Intelligent and Aplication Week 10
 Nama		: Almas Diqya Wafa’
 NIM		: 5311421005
 Prodi		: Teknik Elektro
-Mata Kuliah	: Artificial Intellegent and Aplication
-Rombel	: Senin 09.00
+Mata Kuliah	            : Artificial Intellegent and Aplication
+Rombel	            : Senin 09.00
 
 MODUL 4
 “Teknik Pencarian Blind Search”
 
 1.	Tentukan bagaimana algoritma BFS di atas dapat menentukan node ke 8, 6, dan 7.
+   
 Program:
 import java.util.ArrayDeque; 
 import java.util.ArrayList; 
@@ -30,8 +31,7 @@ NodeColour colour;
 public Node(int data) 
 { 
             this.data = data; 
-        } 
-        
+        }  
     /**
      *
      * @return
@@ -42,14 +42,11 @@ public Node(int data)
          return "(" + data + ",d=" + distance + ")"; 
         } 
     } 
-    
     Map<Node, List<Node>> nodes; 
- 
     public AdjacencyList() 
     { 
         nodes = new HashMap<>(); 
     } 
-    
     public void addEdge(Node n1, Node n2) 
     { 
         if (nodes.containsKey(n1)) { 
@@ -60,7 +57,6 @@ public Node(int data)
             nodes.put(n1, list); 
         } 
     } 
-    
     public void bfs(Node s) 
     { 
         Set<Node> keys = nodes.keySet(); 
@@ -101,37 +97,27 @@ public Node(int data)
         Node n6 = new Node(6); 
         Node n7 = new Node(7); 
         Node n8 = new Node(8); 
-        
-        graph.addEdge(n1, n2); 
-        
+        graph.addEdge(n1, n2);   
         graph.addEdge(n2, n1); 
-        graph.addEdge(n2, n3); 
-        
+        graph.addEdge(n2, n3);   
         graph.addEdge(n3, n4); 
-        graph.addEdge(n3, n2); 
-        
+        graph.addEdge(n3, n2);   
         graph.addEdge(n4, n3); 
         graph.addEdge(n4, n5); 
-        graph.addEdge(n4, n6); 
-        
+        graph.addEdge(n4, n6);  
         graph.addEdge(n5, n4); 
         graph.addEdge(n5, n6); 
         graph.addEdge(n5, n7); 
-        
         graph.addEdge(n6, n4); 
         graph.addEdge(n6, n5); 
         graph.addEdge(n6, n7); 
         graph.addEdge(n6, n8); 
-        
         graph.addEdge(n7, n5); 
         graph.addEdge(n7, n6); 
         graph.addEdge(n7, n8); 
-        
         graph.addEdge(n8, n6); 
         graph.addEdge(n8, n7); 
-        
         graph.bfs(n3); 
- 
     } 
 }
 
